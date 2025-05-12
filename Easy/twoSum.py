@@ -3,7 +3,7 @@ def twoSum(list, target):
     sum = 0
     for i in range(len(list)):
         for n in range(len(list)):
-            if list[i] == list[n]:
+            if i == n:
                 sum = 0
             else:
                 sum = list[i] + list[n]
@@ -13,3 +13,6 @@ def twoSum(list, target):
         if len(indexNum) == 2:
             break
     return indexNum
+
+
+print(twoSum([3, 3], 6))
