@@ -1,23 +1,20 @@
-lista = [2, 7, 11, 15]
+digits = sorted([2, 2, 8, 8, 2])
 
-class Solution:
-    def twoSum(self, list, target):
-        indexNum = []
-        sum = 0
-        for i in range(len(list)):
-            for n in range(len(list)):
-                if list[i] == list[n]:
-                    sum = 0
-                else:
-                    sum = list[i] + list[n]
-                    if sum == target:
-                        indexNum.append(i)
-                        indexNum.append(n)
-            if len(indexNum) == 2:
-                break
-        return indexNum
+filtered_digits = []
+list_without_repetition = []
+sorted_digits = sorted(digits)
+for i in range(len(sorted_digits)):
+    for n in range(len(sorted_digits)):
+        for x in range(len(sorted_digits)):
+            if i != n and i != x and n != x: #evita que o mesmo dígito se repita
+                concatenation = f"{sorted_digits[i]}" + f"{sorted_digits[n]}" + f"{sorted_digits[x]}"
+                if sorted_digits[i] != 0:
+                    filtered_digits.append(concatenation)
+for i in range(len(filtered_digits)):
+    if filtered_digits[i] not in list_without_repetition:
+        list_without_repetition.append(filtered_digits[i])
 
-sol = Solution()
+list = [int(list_without_repetition[i]) for i in range(len(list_without_repetition)) if int(list_without_repetition[i][2]) % 2 == 0]
 
-sol.twoSum(lista, 9)
-
+print(filtered_digits)
+print(list)
