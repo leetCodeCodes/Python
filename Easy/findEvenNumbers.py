@@ -18,5 +18,4 @@ def findEverNumbers(digits):
     return [int(list_without_repetition[i]) for i in range(len(list_without_repetition)) if int(list_without_repetition[i][2]) % 2 == 0]
 
 
-
 print(findEverNumbers(digits))
