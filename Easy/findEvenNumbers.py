@@ -1,4 +1,4 @@
-digits = sorted([2, 2, 8, 8, 2])
+digits = sorted([2, 8, 8, 2])
 
 
 def findEverNumbers(digits):
